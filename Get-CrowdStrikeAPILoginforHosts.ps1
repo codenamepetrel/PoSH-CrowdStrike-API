@@ -1,3 +1,10 @@
+#####################################################################################################
+#                                                                                                   #
+#                                                                                                   #
+#                           Pete Lenhart - 4/14/2023                                                #
+#                           Crowdstrike API - Get Logins for Host                                   # 
+#                                                                                                   #
+#####################################################################################################
 
 [CmdletBinding()]
 
@@ -14,8 +21,7 @@ Param
     [string]$hostname
     #[Parameter(Mandatory = $false)]
     #[ValidateNotNullOrEmpty()]
-    #[string]$aid   
-   
+    #[string]$aid      
 )
 BEGIN {
     try {
@@ -59,10 +65,7 @@ $session = New-Object Microsoft.PowerShell.Commands.WebRequestSession
         "authorization"="Bearer $token"
   } 
 $aid = $a.resources
-
-
 }
-
 END {
 $session = New-Object Microsoft.PowerShell.Commands.WebRequestSession
 $session.UserAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36"
@@ -73,8 +76,7 @@ $getContent = Invoke-RestMethod -UseBasicParsing -Uri "https://api.crowdstrike.c
 "Accept-Encoding"="gzip, deflate, br"
 "Accept-Language"="en-US,en;q=0.8"
 "accept"="application/json"
-"authorization"="Bearer $token"
-  
+"authorization"="Bearer $token"  
 } `
 -ContentType "application/json" `
 -Body ([System.Text.Encoding]::UTF8.GetBytes("{$([char]10)  `"ids`": [$([char]10)    `"$aid`"$([char]10)  ]$([char]10)}"))
