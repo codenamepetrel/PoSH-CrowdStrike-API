@@ -22,6 +22,15 @@ Param
 )
 BEGIN {
 
+    try {
+        . (".\Powershell\Classes\APIHelperClass.psm1")
+        }
+    catch {
+        Write-Host "Error while loading supporting PowerShell Scripts" 
+        }
+    $myID = $myAPICreds.apiKey
+    $mySec = $myAPICreds.apiSeecret
+
     $crowdStrikeSession = New-Object Microsoft.PowerShell.Commands.WebRequestSession
     $crowdStrikeResponse = Invoke-WebRequest -UseBasicParsing -Uri "https://api.crowdstrike.com/oauth2/token" `
         -Method "POST" `
