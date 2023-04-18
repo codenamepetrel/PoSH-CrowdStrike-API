@@ -18,7 +18,7 @@ Param
     [string]$seecret = "X"
     [Parameter(Mandatory = $false)]
     [ValidateNotNullOrEmpty()]
-    [string]$sensorID
+    [string]$sensorID = "X"
 )
 BEGIN {
 
@@ -47,19 +47,10 @@ $session.UserAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.
 Invoke-WebRequest -UseBasicParsing -Uri "https://api.crowdstrike.com/sensors/entities/download-installer/v1?id=$sensorID" `
 -WebSession $session `
 -Headers @{
-"Accept-Encoding"="gzip, deflate, br"
+  "Accept-Encoding"="gzip, deflate, br"
   "Accept-Language"="en-US,en;q=0.8"
-  "Origin"="https://assets.falcon.crowdstrike.com"
-  "Referer"="https://assets.falcon.crowdstrike.com/"
-  "Sec-Fetch-Dest"="empty"
-  "Sec-Fetch-Mode"="cors"
-  "Sec-Fetch-Site"="same-site"
-  "Sec-GPC"="1"
   "accept"="application/json"
   "authorization"="Bearer $token" 
-  "sec-ch-ua"="`"Chromium`";v=`"112`", `"Brave`";v=`"112`", `"Not:A-Brand`";v=`"99`""
-  "sec-ch-ua-mobile"="?0"
-  "sec-ch-ua-platform"="`"Windows`""
 }
 }
 END {}
