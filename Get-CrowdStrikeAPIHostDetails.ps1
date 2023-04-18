@@ -27,7 +27,7 @@ Param
 )
 BEGIN {
     try {
-        . (".\Powershell\Classes\APIHelper.ps1")
+        . (".\Powershell\Classes\APIHelperClass.psm1")
         }
     catch {
         Write-Host "Error while loading supporting PowerShell Scripts" 
