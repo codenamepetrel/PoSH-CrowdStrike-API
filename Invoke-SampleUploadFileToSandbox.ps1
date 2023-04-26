@@ -6,6 +6,28 @@
 #                                                                                                   #
 #####################################################################################################
 
+<#
+Portable executables: .exe, .scr, .pif, .dll, .com, .cpl, etc.
+Office documents: .doc, .docx, .ppt, .pps, .pptx, .ppsx, .xls, .xlsx, .rtf, .pub
+PDF
+APK
+Executable JAR
+Windows script component: .sct
+Windows shortcut: .lnk
+Windows help: .chm
+HTML application: .hta
+Windows script file: .wsf
+Javascript: .js
+Visual Basic: .vbs, .vbe
+Shockwave Flash: .swf
+Perl: .pl
+Powershell: .ps1, .psd1, .psm1
+Scalable vector graphics: .svg
+Python: .py
+Linux ELF executables
+Email files: MIME RFC 822 .eml, Outlook .msg.
+#>
+
 
 [CmdletBinding()]
 
