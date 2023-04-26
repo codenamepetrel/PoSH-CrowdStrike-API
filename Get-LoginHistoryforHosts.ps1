@@ -10,22 +10,15 @@
 
 Param
 (
-    #[Parameter(Mandatory = $false)]
-    #[ValidateNotNullOrEmpty()]
-    #[string]$clientid,
-    #[Parameter(Mandatory = $false)]
-    #[ValidateNotNullOrEmpty()]
-    #[string]$seecret,
     [Parameter(Mandatory = $false)]
     [ValidateNotNullOrEmpty()]
     [string]$hostname
-    #[Parameter(Mandatory = $false)]
-    #[ValidateNotNullOrEmpty()]
-    #[string]$aid      
+    
 )
 BEGIN {
+
     try {
-        . (".\Classes\APIHelperClass.psm1")
+        . (".\Classes\APIHelper.ps1")
         }
     catch {
         Write-Host "Error while loading supporting PowerShell Scripts" 
