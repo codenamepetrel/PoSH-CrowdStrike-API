@@ -46,6 +46,8 @@ BEGIN {
 }
 PROCESS{
 
+    #Submit the file to the CrowdStrike Sandbox
+    
     $session = New-Object Microsoft.PowerShell.Commands.WebRequestSession
     $session.UserAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36"
         Invoke-WebRequest -UseBasicParsing -Uri "https://api.crowdstrike.com/samples/entities/samples/v2" `
