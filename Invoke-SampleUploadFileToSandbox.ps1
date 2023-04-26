@@ -5,6 +5,8 @@
 #                           Crowdstrike API - Submit Malware sample to CRowdStrike Sandbox          # 
 #                                                                                                   #
 #####################################################################################################
+
+
 [CmdletBinding()]
 
 Param
@@ -17,7 +19,7 @@ Param
     [string]$uploadfilename
 )
 BEGIN {
-
+    #load api key into script
     try {
         . (".\Classes\falconapihelper.ps1")
         }
