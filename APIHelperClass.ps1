@@ -25,3 +25,22 @@ $myAPICreds = [apihelper]::new()
 #API Key and API secret here.
 #space between key and secret
 $myAPICreds.SetAPIInfo("<KEY> <SECRET")
+
+class sandboxapihelper {
+    [string]$apiKey
+    [string]$apiSeecret
+
+    [string]GetAPIInfo() {
+        return "$($this.apiKey) $($this.apiSeecret)"
+    }
+
+    [void]SetAPTInfo([string]$sandboxapihelper) {
+        $this.apiKey = ($sandboxapihelper -split ' ')[0]
+        $this.apiSeecret = ($sandboxapihelper -split ' ')[1]
+    }
+
+}
+
+$myHostAPICreds = [hostapihelper]::new()
+$myHostAPICreds.SetAPTInfo("<KEY> <SECRET")
+$myHostAPICreds
