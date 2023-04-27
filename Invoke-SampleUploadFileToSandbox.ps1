@@ -43,7 +43,7 @@ Param
 BEGIN {
     #load api key into script
     try {
-        . (".\Classes\falconapihelper.ps1")
+        . (".\Classes\APIHelper.ps1")
         }
     catch {
         Write-Host "Error while loading supporting PowerShell Scripts" 
